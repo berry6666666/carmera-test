@@ -15,4 +15,10 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            // 生成并显示 Allure 报告
+            allure includeProperties: false, results: [[path: 'allure-results']]
+        }
+    }
 }
