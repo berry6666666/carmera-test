@@ -7,6 +7,7 @@ pipeline {
                     steps {
                         echo 'hellow'
                         bat 'conda activate test2'
+                        bat 'conda list'
                         bat 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir report'
                         
                     }
