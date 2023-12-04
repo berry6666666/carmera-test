@@ -6,6 +6,7 @@ pipeline {
                 stage ('RL1XXZ0007'){
                     steps {
                         echo 'hellow'
+                        bat '.\\C:\\Users\\barry.huang\\anaconda3\\envs\\test2\\to\\virtualenv\\Scripts\\activate'
                         bat 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir report'
                         
                     }
