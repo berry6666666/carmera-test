@@ -7,6 +7,7 @@ pipeline {
                     steps {
 
                         echo 'hellowe'
+                        sh 'cd C:\Users\barry.huang\AppData\Local\Jenkins\.jenkins\workspace\camera test'
                         sh 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir report'
                    
                     }
