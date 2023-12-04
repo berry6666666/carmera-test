@@ -5,10 +5,10 @@ pipeline {
             parallel {
                 stage ('RL1XXZ0007'){
                     steps {
-                    catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                            echo 'hellowe'
-                            sh 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir allure-results'
-                        } 
+
+                        echo 'hellowe'
+                        sh 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir allure-results'
+                   
                     }
                 }
             }
