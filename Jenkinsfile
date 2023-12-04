@@ -1,4 +1,4 @@
-icesportpipeline {
+pipeline {
     agent any
     stages {
         stage('Run test') {
