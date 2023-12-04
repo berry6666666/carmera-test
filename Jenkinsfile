@@ -5,13 +5,14 @@ pipeline {
             parallel {
                 stage ('RL1XXZ0007'){
                     steps {
-                        echo 'hellow'
-                        bat 'conda create -n jk_env python=3.8.18'
-                        bat 'conda activate jk_env'
-                        bat 'conda list'
-                        bat 'pip install -r requirements.txt'
-                        bat 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir report'
-                        
+                         script {
+                            // 调用 Conda 初始化脚本
+                            bat 'call C:\\Users\\barry.huang\\anaconda3\\envs\\test2\\Scripts\\activate.bat'
+                            // 激活 Conda 环境
+                            bat 'call conda activate test2'
+                            // 运行后续命令
+                            bat 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir report'
+                         }
                     }
                 }
             }
