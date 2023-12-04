@@ -1,4 +1,4 @@
-portpipeline {
+icesportpipeline {
     agent any
     stages {
         stage('Run test') {
@@ -9,6 +9,7 @@ portpipeline {
                         dir('getac-camera-test') {
                             sh 'pwd'
                             sh 'ls -l'
+                            sh 'adb devices'
                             catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
                                     sh 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir allure-results'
                                 } 
