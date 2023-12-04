@@ -6,6 +6,7 @@ pipeline {
                 stage ('RL1XXZ0007'){
                     steps {
                         echo 'hellowe'
+                        bat 'appium'
                         bat 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir report'
                         
                     }
