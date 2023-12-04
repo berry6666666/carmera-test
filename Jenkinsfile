@@ -1,4 +1,4 @@
-pipeline {
+portpipeline {
     agent any
     stages {
         stage('Run test') {
@@ -10,7 +10,7 @@ pipeline {
                             sh 'pwd'
                             sh 'ls -l'
                             catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                                    sh 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir allure-results'
+                                    sh 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir report'
                                 } 
                             }
                         }
