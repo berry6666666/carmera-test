@@ -6,8 +6,11 @@ pipeline {
                 stage ('RL1XXZ0007'){
                     steps {
                          script {
-
-                            bat 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir allure-results'
+                            bat 'pip install -r requirements.txt'
+                            bat 'conda list'
+                            catchError(buildResult: 'FAILURE', stageResult: 'FAILURE'){
+                                bat 'pytest test/ --udid RL1XXZ0007 --platform-version 10 --alluredir allure-results'
+                            }
                          }
                     }
                 }
