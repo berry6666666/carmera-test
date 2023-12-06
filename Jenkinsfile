@@ -5,7 +5,7 @@ pipeline {
             steps{
                 script {
                         bat 'pip install -r requirements.txt'
-                        bat 'conda list'
+                        //bat 'conda list'
                 }
             }
         }
